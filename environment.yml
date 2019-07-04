@@ -6,10 +6,10 @@ dependencies:
   - pip:
     - black
     - flake8
-    - imageio
     - jupyter
     - numpy
     - matplotlib
     - pandas
     - pyrealsense2
     - rope
+    - pypng
