@@ -2,5 +2,5 @@
 
 # TODOs
 
-* Corpus of depth images (e.g. numpy images)
+* add pictures of car tires to corpus
 * Testing sensitivity to small changes in depth ("depth resolution")
