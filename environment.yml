@@ -1,0 +1,14 @@
+name: realsense
+
+dependencies:
+  - python=3.6
+  - pip
+  - pip:
+    - black
+    - flake8
+    - jupyter
+    - numpy
+    - matplotlib
+    - pandas
+    - pyrealsense2
+    - rope
