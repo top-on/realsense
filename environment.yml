@@ -6,6 +6,7 @@ dependencies:
   - pip:
     - black
     - flake8
+    - imageio
     - jupyter
     - numpy
     - matplotlib

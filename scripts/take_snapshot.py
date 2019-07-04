@@ -5,7 +5,7 @@ from datetime import datetime
 import numpy as np
 import pyrealsense2 as rs
 
-OUT_DIR = "data/snapshots/"
+OUT_DIR = "data/snapshots/npy/"
 
 pipeline = rs.pipeline()
 pipeline.start()
