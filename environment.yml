@@ -4,12 +4,16 @@ dependencies:
   - python=3.6
   - pip
   - pip:
+    - beautifulsoup4
     - black
     - flake8
     - jupyter
+    - labelImg
     - numpy
     - matplotlib
     - pandas
     - pyrealsense2
-    - rope
     - pypng
+    - rope
+    - untangle
+    - xmltodict
