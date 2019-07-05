@@ -1,6 +1,6 @@
 """ Take snapshot and save as numpy array. """
 
-from datetime import datetime
+import time
 
 import numpy as np
 import pyrealsense2 as rs
@@ -23,4 +23,5 @@ for i in range(arr.shape[0]):
 pipeline.stop()
 
 # write to file
-np.save(file=OUT_DIR + str(datetime.now()) + ".npy", arr=dist)
+timestamp = str(int(time.time()))
+np.save(file=OUT_DIR + timestamp + ".npy", arr=dist)
