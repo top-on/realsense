@@ -3,6 +3,7 @@
 import os
 from collections import namedtuple
 from pathlib import Path
+from typing import Dict, Tuple
 
 import numpy as np
 from bs4 import BeautifulSoup
@@ -37,7 +38,9 @@ def parse_xml_to_boxes(xml: str, name: str) -> Box:
     return box
 
 
-def box_from_array(array: np.ndarray, box: Box) -> np.ndarray:
+def box_from_array(
+    array: Dict[Tuple[int, int], float], box: Box
+) -> Dict[Tuple[int, int], float]:
     arr_box = arr[box.ymin : box.ymax, box.xmin : box.xmax]
     return arr_box
 
