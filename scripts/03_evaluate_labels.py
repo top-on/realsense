@@ -12,7 +12,7 @@ DIR_LABELS = "data/snapshots/labels/"
 DIR_IMAGES = "data/snapshots/jpg/"
 DIR_ARRAYS = "data/snapshots/npy/"
 
-label_files = [DIR_LABELS + i for i in os.listdir(DIR_LABELS)]
+label_files = sorted([DIR_LABELS + i for i in os.listdir(DIR_LABELS)])
 img_ids = [Path(i).stem for i in label_files]
 
 img_files = [Path(DIR_IMAGES + i).with_suffix(".jpg").__str__() for i in img_ids]
