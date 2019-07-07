@@ -37,6 +37,11 @@ def parse_xml_to_boxes(xml: str, name: str) -> Box:
     return box
 
 
+def box_from_array(array: np.ndarray, box: Box) -> np.ndarray:
+    arr_box = arr[box.ymin : box.ymax, box.xmin : box.xmax]
+    return arr_box
+
+
 # %%
 # label_file = label_files[0]
 # arr_file = arr_files[0]
@@ -48,12 +53,9 @@ for label_file, arr_file in zip(label_files, arr_files):
     box_low: Box = parse_xml_to_boxes(xml=text, name="low")
     box_high: Box = parse_xml_to_boxes(xml=text, name="high")
     # depth information from bounding boxes
-    arr_low = np.load(arr_file)[
-        box_low.ymin : box_low.ymax, box_low.xmin : box_low.xmax
-    ]
-    arr_high = np.load(arr_file)[
-        box_high.ymin : box_high.ymax, box_high.xmin : box_high.xmax
-    ]
+    arr = np.load(arr_file)
+    arr_low = box_from_array(arr, box_low)
+    arr_high = box_from_array(arr, box_high)
     # calculate tread depth
     depth_mm = (np.median(arr_low) - np.median(arr_high)) * 1000
     print(f"Median profile depth of {label_file}: {depth_mm:.2f}")
