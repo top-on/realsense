@@ -8,7 +8,7 @@ import numpy as np
 from bs4 import BeautifulSoup
 
 DIR_LABELS = "data/snapshots/labels/"
-DIR_IMAGES = "data/snapshots/npy/"
+DIR_IMAGES = "data/snapshots/jpg/"
 DIR_ARRAYS = "data/snapshots/npy/"
 
 label_files = [DIR_LABELS + i for i in os.listdir(DIR_LABELS)]
@@ -56,6 +56,6 @@ for label_file, arr_file in zip(label_files, arr_files):
     ]
     # calculate tread depth
     depth_mm = (np.median(arr_low) - np.median(arr_high)) * 1000
-    print(f"Median profile depth: {depth_mm:.2f}")
+    print(f"Median profile depth of {label_file}: {depth_mm:.2f}")
 
 # %%
