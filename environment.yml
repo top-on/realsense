@@ -15,5 +15,6 @@ dependencies:
     - pyrealsense2
     - pypng
     - rope
+    - scipy
     - untangle
     - xmltodict
