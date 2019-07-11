@@ -2,6 +2,7 @@
 
 from typing import List
 
+import numpy as np
 from scipy import stats
 
 GROUND_TRUTH: str = "data/comparison/ground_truth_15626997.txt"
@@ -20,9 +21,12 @@ truth: List[float] = read_to_list(GROUND_TRUTH)  # ground truth
 prediction: List[float] = read_to_list(IMAGE_PREDICTIONS)  # predictions
 
 # report comparison
-print(f"GROUND TRUTH (in mm)\nData: {truth}\nDistribution:{stats.describe(truth)}\n")
-print(
-    "PREDICTIONS FROM CAMERA (in mm)\n"
-    f"Data: {prediction}\n"
-    f"Distribution:{stats.describe(prediction)}"
-)
+print(f"GROUND TRUTH (in mm):")
+print(f"Data: {truth}")
+print(stats.describe(truth))
+print(f"Standard deviation: {np.std(truth):.3f}\n")
+
+print("PREDICTIONS FROM CAMERA (in mm):")
+print(f"Data: {prediction}")
+print(stats.describe(prediction))
+print(f"Standard deviation: {np.std(prediction):.3f}")
